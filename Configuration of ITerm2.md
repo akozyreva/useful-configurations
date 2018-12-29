@@ -33,6 +33,8 @@ if [ -f ~/my_script_folder/iterm2_rainbow_tabs/iterm2_rainbow_tabs.sh ];
  then . ~/my_script_folder/iterm2_rainbow_tabs/iterm2_rainbow_tabs.sh
 fi
 ```
+* Use this repo in order to recieve colored tabs
+https://github.com/lfender6445/iterm2_rainbow_tabs
 * In order to check it, type "ls" in your terminal - you see something like this:
 ![screen shot 2018-10-02 at 17 08 31](https://user-images.githubusercontent.com/40454842/46358011-5c29b080-c666-11e8-8e55-e30b7e2a3f98.png)
 
