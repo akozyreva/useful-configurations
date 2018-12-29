@@ -1,5 +1,6 @@
 # Configuration of ITerm2.
-
+* Before beginning, please install homebrew:
+https://brew.sh/index_ru
 * Open ITerm2 -> Preferences -> Profiles -> Colors -> Color Presets.. -> Import or choose existing one.
 
   I use this:
