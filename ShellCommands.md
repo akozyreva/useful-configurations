@@ -334,7 +334,9 @@ create a new file
 |r: !ls | 			reads the output of the ls command and puts it below the cursor 
 
 ### view file 
+
 vim but in only-read mode
+
 | parameter| description    |
 | -------|:-------------:|
 |o| 					open up a line below the cursor and place you in Insert mode
