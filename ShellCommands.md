@@ -60,6 +60,7 @@ find / -name "filename"
 | space         | to go on the next page|
 | g             | go to the begining og man     |
 | G             | go to the bottom of man   |
+
 if you don't know exactly command, which you're looking for
 ```
 man -k <searchTeem>
@@ -96,7 +97,7 @@ rm -rf <folder>
 | parameter       | description           |
 | ------------- |:-------------:|
 | -r         | remove content|
-| f             | without prompt for comfirmation    |
+| -f             | without prompt for comfirmation    |
 
 ## Copy file 
 Copy file1, file2, etc. to destination directory
@@ -135,143 +136,191 @@ make special permissions by default for the folder and files in it
 
 ## DISPLAYING THE CONTENTS OF FILE
 
-10. cat file
+### cat file
 display the contents of file - convinient for short files
-cat -n file  =show file with numbers
 
-11. more file 
-browse through a text file =??
+show file with numbers
+```
+cat -n <file> 
+```
 
-12. less file 
+### more file 
+browse through a text file - it works more quicker than less.
+
+### less file 
 more features than more
 
-13. head file
+### head file
 output the begining (or top) portion of file
-head -15 file.txt
-show 15 lines of file (by default it's 10 lines)
 
-14. tail file
-output the ending (or bottom) portion of file
-tail -15 file.txt
 show 15 lines of file (by default it's 10 lines)
+```
+head -15 file.txt
+```
+### tail file
+output the ending (or bottom) portion of file
+```
+tail -15 file.txt
+```
+show 15 lines of file (by default it's 10 lines)
+```
 tail -f file
+```
 displays the data as it's being written to the file
 
-15. sort text in file
-sort <nameOfFile>  			sort text in alphabetical order
-sort -u <nameOfFile>  			sort text in alphabetical order and show only unique lines
-sort -r <nameOfFile>  			sort text in alphabetical order and reverse order
+### sort text in file
+| command| description    |
+| -------|:-------------:|
+|sort `<nameOfFile>`|sort text in alphabetical order|
+|sort -u `<nameOfFile>`| sort text in alphabetical order and show only unique lines
+|sort -r `<nameOfFile>`| sort text in alphabetical order and reverse order
 
-15. nano
-ctrl+X = exit from editor
-ctrl+G = help of nano
+### nano
+| command| description    |
+| -------|:-------------:|
+|ctrl+X| exit from editor
+|ctrl+G| help of nano
 
-16. grep
--i   Perform a search,ignoring case
--c   Count the number of occurences in a file
--n   Precede output with line numbers
--v   Invert Match. Print lines that don't match
+### grep
+| parameter| description    |
+| -------|:-------------:|
+|-i  | Perform a search,ignoring case
+|-c  | Count the number of occurences in a file
+|-n  | Precede output with line numbers
+|-v  | Invert Match. Print lines that don't match
+
+*Example*
 
 cat logs, where there is word "error"  
+```
 cat Robustness.log | grep "error"
+```
+#### More Exmaples
+show the count of word error in file, ignore the case
+```
+grep -ci error setup.log
+```
 
-exmaples
-grep -ci error hiro_setup.log     show the count of word error in file, ignore the case
-grep /data/jenkins/jobs -ir -H "repository.arago.de " --include="config.xml"
+find word "we" and replace it to "akozyreva"
 
-find and replcae
-akozyreva@mbpx-akozyreva:~$ grep "we" -rl -H ./prodigy.txt | xargs sed -i "" 's/We/akozyreva/g'
-akozyreva@mbpx-akozyreva:~$ grep "we" -ir -H ./prodigy.txt
+```
+grep "we" -ir -H ./prodigy.txt
+grep "we" -rl -H ./prodigy.txt | xargs sed -i "" 's/We/akozyreva/g'
+```
 
-grep -rl -H "repository.arago.de " --include="config.xml" /data/jenkins/jobs | xargs sed -i  's/repository.arago.de/repo.hiro.arago.co/g'
-
-17.vim
-READ MODE
+## vim
+### READ MODE
+how move the cursor in vim	
+```
 	^
 	k
 <h 		l>
 	j
-how move the cursor in vim		
-============================
+```
 how move cursor in line
-^ 			move to the begining of line
-$ 			go to the end of line
-============================
+| parameter| description    |
+| -------|:-------------:|
+|^|move to the begining of line
+|$ |go to the end of line
 how move between words
-w 			right one word
-e 			from left to right to the next word
-2w			right on the 2 words
-b 			left one word
+| parameter| description    |
+| -------|:-------------:|
+|w |right one word
+|e  |from left to right to the next word
+|2w	|right on the 2 words
+|b 	|left one word
 
-EDIT
-x 			remove the caracter under the cursor
-dw 			delete a word
-d2w			delete 2 words
-dd 			delete a line 
-D 			delete from the current position
-I 			insert in the beginning of line
+### EDIT
+| parameter| description    |
+| -------|:-------------:|
+|x |			remove the caracter under the cursor
+|dw |			delete a word
+|d2w	|		delete 2 words
+|dd |			delete a line 
+|D |			delete from the current position
+|I |			insert in the beginning of line
 
-APPENDING=append after line
-a			Append text after the cursor [count] times.
-A			Append text at the end of the line [count] times.
+### APPENDING=append after line
+| parameter| description    |
+| -------|:-------------:|
+|a|			Append text after the cursor [count] times.
+|A|			Append text at the end of the line [count] times.
+|:x |			same as wq
+|:n |			position of the cursor on the line n
+|:$ |			position of the cursor on the last line
+|:set nu | 	turn on numbering
+|:set nonu |	turn off numbering
 
-:x 			same as wq
-:n 			position of the cursor on the line n
-:$ 			position of the cursor on the last line
-:set nu 	turn on numbering
-:set nonu 	turn off numbering
+### CHANGING TEXT
+| parameter| description    |
+| -------|:-------------:|
+|r`<charachter>`| 		replace the current character
+|R`<characnters>`| 		replace more than one character
+|cw|		change the current word
+|cc |		change the current line
+|c$	|	change the text from the current position to the end of line!
+|C |		same as c$
+|~|		reverse the case of character
 
-CHANGING TEXT
-r<charachter> 		replace the current character
-R<characnters> 		replace more than one character
-cw		change the current word
-cc 		change the current line
-c$		change the text from the current position to the end of line!
-C 		same as c$
-~		reverse the case of character
+### COPY-PAST
+| parameter| description    |
+| -------|:-------------:|
+|yw| 		copy one word
+|yy	|	yank copy the current line
+|y`<position>`|	copy the position
+|p| 		past the most recent deleted or yanked text
 
-COPY-PAST
-yw 		copy one word
-yy		yank copy the current line
-y<position>	copy the position
-p 		past the most recent deleted or yanked text
+### STEP FORWARD/PREVIOUS
+| parameter| description    |
+| -------|:-------------:|
+|u |		step previous
+|U| 		return all the line to it's original state
+|cltr+R |	next step
 
-STEP FORWARD/PREVIOUS
-u 		step previous
-U 		return all the line to it's original state
-cltr+R 	next step
-
-ARCHIEVE
-tar 
-c 			create archive
-x 			extract files from the archive
-t 			display the table of contents (list)
-v 			be verbose (view files, which were extracted)
-z  			use compression
-f file 		use this file
-example
-create archive     
+### ARCHIEVE
+```tar```
+| parameter| description    |
+| -------|:-------------:|
+|c| 			create archive
+|x| 			extract files from the archive
+|t| 			display the table of contents (list)
+|v |			be verbose (view files, which were extracted)
+|z|  			use compression
+|f file| 		use this file
+#### Examples
+create archive
+```     
 tar cf tars.tar Robustness.log
 tar zcf tars.tgz Robustness.log
+```
 extract archive
+```
 tar xf tars.tar
+```
 show files in archive
+```
 tar tf tars.tar
+```
 create archive from folder
+```
 tar -zcvf archive-name.tar.gz directory-name
-tar czf tars.tar ./.m2
+tar czf tars.tar ./.test
+```
+### Compressing files
+| command| description    |
+| -------|:-------------:|
+|gzip|  		compress files
+|gunzip|  	uncompress files
+|gzcat|   	concatenates compressed files
+|zcat |  		concatenates compressed files
 
-Compressing files
-gzip  		compress files
-gunzip  	uncompress files
-gzcat   	concatenates compressed files
-zcat   		concatenates compressed files
 
-
-Disk Usage
-du 		Estimate file usage
-du -k 	Display sizes in Kilobytes
-du -h  	Display sizes in human readable format
+### Disk Usage
+| command| description    |
+| -------|:-------------:|
+|du| 		Estimate file usage
+|du -k |	Display sizes in Kilobytes
+|du -h | 	Display sizes in human readable format
 
 SEARCHING
 /<pattern>	start a forward search
