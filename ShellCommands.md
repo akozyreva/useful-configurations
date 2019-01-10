@@ -115,7 +115,7 @@ cp -r
 | mv dir firstdir  | ename dir to firstdir|
 | mv file1.text firstdir| remove file1.txtx in firstdir |
 | mv file1 file2 | if file2 exists, it will overwrite file2 of the content of file1 |
-|mv -i | |it will ask, do you want to rename it or not|
+|mv -i |it will ask, do you want to rename it or not|
 
 ## tree 
 show the tree of folders
@@ -217,12 +217,16 @@ how move the cursor in vim
 <h 		l>
 	j
 ```
+
 how move cursor in line
+
 | parameter| description    |
 | -------|:-------------:|
 |^|move to the begining of line
 |$ |go to the end of line
+
 how move between words
+
 | parameter| description    |
 | -------|:-------------:|
 |w |right one word
