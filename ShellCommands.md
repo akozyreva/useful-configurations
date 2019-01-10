@@ -547,6 +547,7 @@ whoami
 
 ### yum
 yum allows to install packages from open Internet (firefox, for exmaple)
+
 |command| description    |
 | -------|:-------------:|
 |yum search string|        search for string
