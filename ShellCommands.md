@@ -450,119 +450,173 @@ Display the file type
 file sales.data
 ```
 
-cut 
-useful documentation 
+### cut 
+Useful documentation 
+
 https://ss64.com/bash/cut.html
+
 it only cut the output, not the file itself
-cut -d':' -f1 /etc/passwd
+
 show the first field of the line, separating by comma
+
+```
+cut -d':' -f1 /etc/passwd
+```
 https://www.thegeekstuff.com/2013/06/cut-command-examples
 
-alias
-command for creating shrotcut of command
-for example in order not to type ls-l all the time you can create alias of it and type only ll
+### alias
+Command for creating shrotcut of command.
 
-unalias
+For example in order not to type ls-l all the time you can create alias of it and type only ll
+
+### unalias
 command for delete aliases
 
-printenv
+### printenv
 see all env_variables in your system
 
+*Examples*
+```
 printenv HOME
-see the value of env_variable of HOME
-or echo $HOME
+```
+see the value of env_variable of HOME or 
+```
+echo $HOME
+```
 for creating variable
+```
 export VAR="value"
+```
 but it should work only for terminal session
-unset VAR     for deleting variable
+```unset VAR
+```
+for deleting variable
+
 to add constantly variable you need to add it in ~/.bash_profile
 
-Processes and Job Control
-ps     Display process status (without options - only processes in current session)
-ps -e    everything, all processes
-ps -eH    display all processes, full
-ps -e --forest    display a processes tree
-ps -f    full format listing
-ps -u username    display usernames's processes
-ps -p pid         display information for PID (process id, which can be found in ps command)
-pstree     display processes in a tree format
-top        interactive process viewer
-htop       the same viewer but look cooler
-command &    start command in background
-Ctrl-c       kill the foreground process
-Ctrl-z       suspend the foreground process
-kill         kill a process by job number or PID
+### Processes and Job Control
+|command| description    |
+| -------|:-------------:|
+|ps|     Display process status (without options - only processes in current session)
+|ps -e |   everything, all processes
+|ps -eH  |  display all processes, full
+|ps -e --forest  |  display a processes tree
+|ps -f |   full format listing
+|ps -u username |   display usernames's processes
+|ps -p pid    |     display information for PID (process id, which can be found in ps command)
+|pstree|     display processes in a tree format
+|top     |   interactive process viewer
+|htop |      the same viewer but look cooler
+|command & |   start command in background
+|Ctrl-c   |    kill the foreground process
+|Ctrl-z |      suspend the foreground process
+| kill     |    kill a process by job number or PID
 
 
-Cron
-cron  runs sheduled jobs, for exmaple
-# run every Monday at 07:00
+### Cron
+cron  runs sheduled jobs, for exmaple - run every Monday at 07:00
+```
 0 7 * * 1 /opt/weekly-report
-crontab file    install a new crontab from file
-crontab -l      List your cron jobs
-crontab -e      Edit your cron jobs
-crontab -r      Remove all of your cron jobs
+```
+|command| description    |
+| -------|:-------------:|
+|crontab file |   install a new crontab from file
+|crontab -l   |   List your cron jobs
+|crontab -e |     Edit your cron jobs
+|crontab -r   |   Remove all of your cron jobs
 
+### User
 su    change user. by default it means superuser
 su - oracle    change user on oracle
-sudo  allows you to execute command as another user, typically the superuser
-sudo command     run command as root
-sudo -u user1 command     Run as user1
-whoami    return account name
 
-yum search string        search for string
-yum info [package]       display info
-yum install -y package
-yum remove package        remove package
+### sudo 
+Allows you to execute command as another user, typically the superuser
 
-rpm -qa      List all installed packages
+run command as root
+```
+sudo command     
+```
+Run as user1
+```
+sudo -u user1 command    
+```
+return account name
+```
+whoami
+```    
+
+### yum
+yum allows to install packages from open Internet (firefox, for exmaple)
+|command| description    |
+| -------|:-------------:|
+|yum search string|        search for string
+|yum info [package] |      display info
+|yum install -y package| install without saying yes
+|yum remove package  |      remove package
+
+### rpm
 rpm has the same functionality as yum but it installs packages, which are local stayed
+List all installed packages
+```
+rpm -qa      
+```
 
+### nohup
+nohup uses for running processes in background - returns id of process
+```
 nohup ./start_test.sh &
+```
 
+## TMUX (ITerm2 + Mac)
 Assuming the default tmux configuration is being used, novice tmux users please follow the instructions below to split the pane
 
-To split the pane horizontally
+*To split the pane horizontally*
 
-Press Ctrl+B
-Release pressed keys in Step 1
-Press "  (on many keyboards, this is Shift+')
-To split the pane vertically
+ - Press Ctrl+B
+- Release pressed keys in Step 1
+- Press "  (on many keyboards, this is Shift+')
 
-Press Ctrl+B
-Release pressed keys in Step 1
-Press %  (on many keyboards, this is Shift+5)
+*To split the pane vertically*
+
+- Press Ctrl+B
+- Release pressed keys in Step 1
+- Press %  (on many keyboards, this is Shift+5)
 
 To close a single pane in tmux, you need to either press Ctrl+d or type exit and press Return.
 
-
+## git
 discard local changes in git
+
+```
 git clean -df
 git checkout -- .
+```
 
-free -h      see ozy perfomance in human readable view
+## disk and memory
+|command| description    |
+| -------|:-------------:|
+|lvmdiskscan   | show all disks on computer
+|lsblk         |show all disks but in tree structure
+|lsblk -p |      show all disks with tree structure and full path
+|df -h      |    show all disks and their size
+|vgs|            list all VLM groups
+|lvdisplay |     list all lv_logical_layers
+|free -h |    show memory (ozu/RAM)
 
-lvmdiskscan   = show all disks on computer
-lsblk         =show all disks but in tree structure
-lsblk -p       show all disks with tree structure and full path
-df -h          show all disks and their size
-vgs            list all VLM groups
-lvdisplay      list all lv_logical_layers
+### Docker
+|command| description    |
+| -------|:-------------:|
+|docker image ls  |  look all images, which you have
+|docker ps -a     |show all containers
+|docker info|     info about docker
+|docker build -t dockerize-vuejs-app .     |  build container
+|docker rmi $(docker images -q).  | delete all images
+|docker container ls |
 
-
-free -h     show memory
-
-docker useful commands!
-
-docker image ls    look all images, which you have
-docker ps -a     show all containers
 for running docker container
+```
 docker run -p 80:80 akozyreva/docker-tutorial:part2
-docker info     info about docker
-docker build -t dockerize-vuejs-app .       build container
- docker rmi $(docker images -q).   delete all images
- docker container ls 
-
+```
 
  ip adress
  cent os 
