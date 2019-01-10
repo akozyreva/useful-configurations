@@ -281,6 +281,66 @@ how move between words
 |U| 		return all the line to it's original state
 |cltr+R |	next step
 
+### SEARCHING
+| parameter| description    |
+| -------|:-------------:|
+|`/<pattern>`|start a forward search
+|`?<pattern>`	|start a reverse search
+|ctrl+O| 		go back to where you came from
+|% |find the ending of parentheses
+|`:s/<oldWord>/<newWord>/g`| change oldword to new in all line 	
+|`:s/<oldWord>/<newWord>/`| change oldword to new in 1 occurence
+|:%s/`<oldWord>/<newWord>/`g |  	change every occurence in the whole file
+|:%s/`<oldWord>/<newWord>/`gc |  	change every occurence in the whole file with a prompt 									whether delete it or not
+
+### CURSOR LOCATION
+| parameter| description    |
+| -------|:-------------:|
+|ctrl+G| 						show location in the file and the file status
+|`<numberOfLine>`G |			go on the line
+|G| 							go to the bottom of file
+|gg|  						move to the start of the file
+
+### EXECUTION
+this allow you to execute external commands
+
+```:!<name of command>```
+
+
+### CREATION OF FILE
+create a new file
+
+```:w <name_of_new_file>```
+
+
+## VISUAL MODE
+```v = visual mode```
+
+## COPY AND PASTE IN NEW FILE
+1. Move the cursor to this line.
+2. Press  v  and move the cursor to the fifth item below.  Notice that the
+     text is highlighted.
+3. Press the  :  character.  At the bottom of the screen  :'<,'> will appear.
+4. Type  w TEST  , where TEST is a filename that does not exist yet.  Verify
+     that you see  :'<,'>w TEST  before you press <ENTER>.
+5. Vim will write the selected lines to the file TEST.  Use  :!dir  or  :!ls
+     to see it.  Do not remove it yet!  We will use it in the next lesson.
+
+
+## RETIEVE VALUE FROM FILE
+| parameter| description    |
+| -------|:-------------:|
+|r:`<name of file>` |insert the text from old file to new file
+|r: !ls | 			reads the output of the ls command and puts it below the cursor 
+
+### view file 
+vim but in only-read mode
+| parameter| description    |
+| -------|:-------------:|
+|o| 					open up a line below the cursor and place you in Insert mode
+|O|  					open up a line above the cursor and place you in Insert mode
+
+
 ### ARCHIEVE
 ```tar```
 
@@ -327,54 +387,6 @@ tar czf tars.tar ./.test
 |du| 		Estimate file usage
 |du -k |	Display sizes in Kilobytes
 |du -h | 	Display sizes in human readable format
-
-SEARCHING
-/<pattern>	start a forward search
-?<pattern>	start a reverse search
-ctrl+O 		go back to where you came from
-% 			find the ending of parentheses
-:s/<oldWord>/<newWord>/g 		change oldword to new in all line 	
-:s/<oldWord>/<newWord>/ 		change oldword to new in 1 occurence
-:%s/<oldWord>/<newWord>/g   	change every occurence in the whole file
-:%s/<oldWord>/<newWord>/gc   	change every occurence in the whole file with a prompt 									whether delete it or not
-
-CURSOR LOCATION
-ctrl+G 						show location in the file and the file status
-<numberOfLine>G 			go on the line
-G 							go to the bottom of file
-gg  						move to the start of the file
-
-EXECUTION
-:!<name of command>
-this allow you to execute external commands
-
-CREATION OF FILE
-:w <name_of_new_file>
-create a new file
-
-VISUAL MODE
-v = visual mode
-
-COPY AND PASTE IN NEW FILE
-1. Move the cursor to this line.
-2. Press  v  and move the cursor to the fifth item below.  Notice that the
-     text is highlighted.
-3. Press the  :  character.  At the bottom of the screen  :'<,'> will appear.
-4. Type  w TEST  , where TEST is a filename that does not exist yet.  Verify
-     that you see  :'<,'>w TEST  before you press <ENTER>.
-5. Vim will write the selected lines to the file TEST.  Use  :!dir  or  :!ls
-     to see it.  Do not remove it yet!  We will use it in the next lesson.
-
-
-RETIEVE VALUE FROM FILE
-r:<name of file> 	insert the text from old file to new file
-r: !ls  			reads the output of the ls command and puts it below the cursor 
-17.view file 
-vim but in only-read mode
-
-o 					open up a line below the cursor and place you in Insert mode
-O  					open up a line above the cursor and place you in Insert mode
-
 
 
 
