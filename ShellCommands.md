@@ -627,7 +627,9 @@ show ip address
  ```
  ifconfig
  ```
+ 
  Explanation of output
+
 |parameter| description    |
 | -------|:-------------:
 |lo  |    show addres, which uses Linux by itslef for communication
@@ -636,10 +638,10 @@ show ip address
 
 
 ### add public key to authorized keys
-
+```
 echo public_key_string >> ~/.ssh/authorized_keys
 cat id_rsa.pub >> ~/.ssh/authorized_keys
-
+```
 ### ping ant others
 
 |command| description    |
@@ -659,7 +661,9 @@ tracepath -n google.com
 ```
 
 ### tcpdump 
+
 look whether packets sends or not
+
 |command| description    |
 | -------|:-------------:|
 |-n |   Display numerical addresses and ports
