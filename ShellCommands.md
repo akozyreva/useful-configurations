@@ -54,11 +54,16 @@ Find file in all machine
 ```
 find / -name "filename" 
 ```						
-2. man
-In order to go on the next page press space
-g - go to the begining og man
-G - go to the bottom of man
-man -k <searchTeem> = if you don't know exactly command, which you're looking for
+## man
+| command       | description           |
+| ------------- |:-------------:|
+| space         | to go on the next page|
+| g             | go to the begining og man     |
+| G             | go to the bottom of man   |
+if you don't know exactly command, which you're looking for
+```
+man -k <searchTeem>
+```
 
 3. ls -a
 -a show all folders, which begin with . (means the are hidden files)
