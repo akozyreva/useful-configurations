@@ -391,42 +391,64 @@ tar czf tars.tar ./.test
 |du -h | 	Display sizes in human readable format
 
 
-
+### About keys on Mac
 The “Home” button on a Macbook Pro keyboard: Fn + Left Arrow.
 The “End” button on a Macbook Pro keyboard: Fn + Right Arrow.
 
-Wildcards
-* matches zero or more characters
-?  matches exactly one  character
-?? matches 2 characters
-/ escape character
-*.txt = matches all files with txt extension
-a?.txt
-find a and one character.txt - for exmaple
-as.txt
-mv *.txt notes   = move all files with extension txt to folder notes
-mv *.txt         =delete all files with txt extension
+### Wildcards
 
-Redirection
-> =redirect output to file 
->> =redirect standard output to a file(appends to any existing contents) 
-<   redirect input from a file to a command
->/dev/null   =redirect output to nowhere
+|parameter| description    |
+| -------|:-------------:|
+|* |matches zero or more characters
+|? | matches exactly one  character
+|??| matches 2 characters
+|/ |escape character
+|*.txt| matches all files with txt extension
+|a?.txt |find a and one character.txt - for exmaple as.txt
+|mv *.txt notes  |move all files with extension txt to folder notes
+|mv *.txt| delete all files with txt extension
+
+## Redirection
+
+|parameter| description    |
+| -------|:-------------:|
+|> |redirect output to file 
+|>> |redirect standard output to a file(appends to any existing contents) 
+|<  | redirect input from a file to a command
+|>/dev/null |redirect output to nowhere
+
+*Examples*
+
+```
 ls a*.txt > /dev/null
-sort < aa.txt
+```
+
 sort all output from fil aa.txt
-sort < files.txt > sorted_files.txt.   = sort files from the files.txt and input the result in sorted_files.txt
 
-Comparing files
-diff file1 file2   	Compare two files
-sdiff file1 file2   Side-by-side comparison
-vimdiff file1 file2    Highlight differencies in vim
+```
+sort < aa.txt
+```
+
+sort files from the files.txt and input the result in sorted_files.txt
+
+```
+sort < files.txt > sorted_files.txt
+```
+
+## Comparing files
+|command| description    |
+| -------|:-------------:|
+|diff file1 file2 |  	Compare two files
+|sdiff file1 file2 |  Side-by-side comparison
+|vimdiff file1 file2 |    Highlight differencies in vim
 
 
-File 
-file file_name    Display the file type
+### File 
+Display the file type
+
+```
 file sales.data
-
+```
 
 cut 
 useful documentation 
