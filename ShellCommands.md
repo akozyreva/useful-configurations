@@ -618,36 +618,56 @@ for running docker container
 ```
 docker run -p 80:80 akozyreva/docker-tutorial:part2
 ```
-
- ip adress
- cent os 
- ip a     show ip address
- Explanation of output
- lo      show addres, which uses Linux by itslef for communication
- eth0    harware device
- on mac 
+### ip
+show ip address
+```
+ ip a     
+ ```
+ on mac run the command 
+ ```
  ifconfig
+ ```
+ Explanation of output
+|parameter| description    |
+| -------|:-------------:
+|lo  |    show addres, which uses Linux by itslef for communication
+| eth0 |   harware device
 
-add public key to authorized keys
+
+
+### add public key to authorized keys
+
 echo public_key_string >> ~/.ssh/authorized_keys
 cat id_rsa.pub >> ~/.ssh/authorized_keys
 
-ping HOST    send packages to the host in order to ckeck whether there is connection or not
-ping -c COUNT HOST    send certain amount of packages
+### ping ant others
+
+|command| description    |
+| -------|:-------------:|
+|ping HOST   | send packages to the host in order to ckeck whether there is connection or not
+|ping -c COUNT HOST  |  send certain amount of packages
 ping -c 3 google.com
 
 examine route (more detailed, than ping)
+```
 traceroute -n google.com
+```
 
 another command for checking network
+```
 tracepath -n google.com
+```
 
-
+### tcpdump 
 look whether packets sends or not
-tcpdump 
--n    Display numerical addresses and ports
--A    Display ASCII text output
--v    Verbose mode. Produce more output
+|command| description    |
+| -------|:-------------:|
+|-n |   Display numerical addresses and ports
+|-A   | Display ASCII text output
+|-v  |  Verbose mode. Produce more output
 
-telnet can be used for checking network (in example bellow checks wheter connection is accepted to 80 port - http - or not)
+### telnet
+Can be used for checking network (in example bellow checks wheter connection is accepted to 80 port - http - or not)
+```
 telnet google.com 80    
+```
