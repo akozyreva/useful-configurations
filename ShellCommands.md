@@ -283,6 +283,7 @@ how move between words
 
 ### ARCHIEVE
 ```tar```
+
 | parameter| description    |
 | -------|:-------------:|
 |c| 			create archive
@@ -291,6 +292,7 @@ how move between words
 |v |			be verbose (view files, which were extracted)
 |z|  			use compression
 |f file| 		use this file
+
 #### Examples
 create archive
 ```     
