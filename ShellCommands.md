@@ -3,7 +3,7 @@
 | ------------- |:-------------:|
 | .             | current directory|
 | ..            | parent directory      |
-| cd            | change to the previous directory    |
+| cd            | change to the home directory    |
 
 ## HOW FIND FOLDER BY NAME
 starts with the current directory (no need to specify directory in case of current directory)
@@ -65,49 +65,76 @@ if you don't know exactly command, which you're looking for
 man -k <searchTeem>
 ```
 
-3. ls -a
--a show all folders, which begin with . (means the are hidden files)
--l show long information about file
--F show you type of file /=folder. @=link *=executable
--r reverse the order
--t sort by the time
-<folder> execute ls in folder
-4. cd 
-if type cd without arguments, you will go to the home directory
+## ls
+| command| description           |
+| -------|:-------------:|
+| -a     | show all folders, which begin with . (means the are hidden files)
+| -l     | show long information about file     |
+| -F     | show you type of file /=folder. @=link *=executable  |
+| -r     | reverse the order
+| -t     | sort by the time    |
+| ``<folder> ``    | execute ls in folder    |
 
-5. which <command>
-which cat
+
+## which <command>
 command show you, where command is located 
+```
+which cat
+```
 
-6.mkdir
-mkdir -p create directory with parents, if need. for exmaple 1/2/3
+## mkdir
+create directory with children, if need. for exmaple 1/2/3
+```
+mkdir -p 
+```
 
-7. Delete file
-rm -rf <folder>   			delete folder and all files in it (r - remove content, f - without prompt for 								comfirmation)
-8.copy file 
-cp src_file1  [src_fileN...]   dest_dir 		=copy file1, file2, etc. to destination directory
-cp -r 											=if folder not exists, create a folder (when copy folders)
+## Delete file
+delete folder and all files in it
+```
+rm -rf <folder>
+```
+| parameter       | description           |
+| ------------- |:-------------:|
+| -r         | remove content|
+| f             | without prompt for comfirmation    |
 
+## Copy file 
+Copy file1, file2, etc. to destination directory
+```
+cp src_file1  [src_fileN...]   dest_dir
+```
+if folder not exists, create a folder (when copy folders)
+```
+cp -r 											
+```
 
-9. mv 							=move or rename files and direcories
-mv dir firstdir 				=rename dir to firstdir
-move file1.text firstdir 		= remove file1.txtx in firstdir
-mv file1 file2 					= if file2 exists, it will overwrite file2 of the content of file1
-mv -i 							= it will ask, do you want to rename it or not
-7. tree 
+## mv =move or rename files and direcories
+| command       | description           |
+| ------------- |:-------------:|
+| mv dir firstdir  | ename dir to firstdir|
+| mv file1.text firstdir| remove file1.txtx in firstdir |
+| mv file1 file2 | if file2 exists, it will overwrite file2 of the content of file1 |
+|mv -i | |it will ask, do you want to rename it or not|
+
+## tree 
 show the tree of folders
-tree -C show the color of different types of files = folders, executable, etc.
+show the color of different types of files = folders, executable, etc.
+```
+tree -C 
+```
 
-8. chmod 
-chmod a=r
+## chmod 
 all users are allowed only to read file
+```
+chmod a=r
+```
 
-9. umask
+## umask
 make special permissions by default for the folder and files in it
 
-======
-DISPLAYING THE CONTENTS OF FILE
-======
+
+## DISPLAYING THE CONTENTS OF FILE
+
 10. cat file
 display the contents of file - convinient for short files
 cat -n file  =show file with numbers
